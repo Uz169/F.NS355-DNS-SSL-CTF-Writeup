@@ -21,7 +21,25 @@ Author@???
 ```
 tshark -r dnscap.pcap -Tfields -e dns.qry.name > names.txt
 ```
+ASCII hex ээс raw руу хөрвүүлэх код
+```
+import re
+import binascii
 
+with open('names.txt', 'r') as f:
+    for name in f:
+        m = re.findall('([a-z0-9\.]+)\.skull', name)
+        if m:
+            try:
+                ascii_string = binascii.unhexlify(m[0].replace('.', '')).decode('utf-8')
+                print(ascii_string)
+            except UnicodeDecodeError:
+                # If decoding as UTF-8 fails, print the raw bytes
+                print(binascii.unhexlify(m[0].replace('.', '')))
+
+```
+
+ 
 <p align="center">
   <img src="">
 </p>
