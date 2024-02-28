@@ -8,7 +8,11 @@ Author@???
     /dnscap.cap
 
 ## Solve
-Энэхүү даалгаврын хувьд dnscap.cap гэдэг файл өгөгдсөн бөгөөд задлаад харахад  яачваа сда
+Энэхүү даалгаврын хувьд dnscap.cap гэдэг файл өгөгдсөн бөгөөд задлаад харахад
+
+<p align="center">
+  <img src="">
+</p>
       
 <p> гэж гарах ба DNS protocol ашигласан их хэмжээний traffic байх ба MX (message exchange) TXT record ууд байсан ба subdomain уудыг hex ээр encode хийсэн
 байсныг доорх коммандаар decode хийсэн. </p>
