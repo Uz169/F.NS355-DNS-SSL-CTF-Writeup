@@ -11,7 +11,7 @@ Author@???
 Энэхүү даалгаврын хувьд dnscap.cap гэдэг файл өгөгдсөн бөгөөд задлаад харахад
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/1.png">
 </p>
       
 <p> гэж гарах ба DNS protocol ашигласан их хэмжээний traffic байх ба MX (message exchange) TXT record ууд байсан ба subdomain уудыг hex ээр encode хийсэн
@@ -41,7 +41,7 @@ with open('names.txt', 'r') as f:
 Үр дүнд нь доорх утгууд гарсан
  
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/2.png">
 </p>
 
 ```
@@ -87,5 +87,5 @@ open('flag.png', 'wb').write(out)
 flag.png -- 
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/3.png">
 </p>
