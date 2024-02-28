@@ -38,8 +38,54 @@ with open('names.txt', 'r') as f:
                 print(binascii.unhexlify(m[0].replace('.', '')))
 
 ```
-
+Үр дүнд нь доорх утгууд гарсан
  
+<p align="center">
+  <img src="">
+</p>
+
+```
+Welcome to dnscap! The flag is below, have fun!!\n
+Good luck! That was dnscat2 traffic on a flaky connection with lots of re-transmits. Seriously,
+```
+гэсэн 2 мөр байсан ба энэ нь DNSCAT2 traffic ашиглаж маш олон дахин илгээлт хийсэн гэсэн hint юм.
+
+мөн өөр сонирхолтой хэсэг байсан нь x00IEND , x00%tEXtdate гэх текстүүд байсан ба энэ IEND гэдэг нь PNG format тай фөйлын 
+magicbyte тул DNS ашиглан PNG file явуулсан гэж дүнгээд PNG file -н hex утгуудыг extract хийхэд flag гарч ирнэ.
+
+Үүний тулд PCAP file - аас DNS queries -г салгаж дараагаар нь flag.png гаргадаг script олсон.
+```
+import binascii
+from scapy.all import rdpcap, DNSQR, DNSRR
+
+last_qry = b''
+out = b''
+q_nb = 0
+
+for p in rdpcap('dnscap.pcap'):
+
+    if p.haslayer(DNSQR) and not p.haslayer(DNSRR):
+
+        qry = p[DNSQR].qname.replace(b'.skullseclabs.org.', b'').split(b'.')
+        qry = b''.join(binascii.unhexlify(_.decode()) for _ in qry)[9:]
+
+        if qry == last_qry:
+            continue
+
+        last_qry = qry
+        q_nb += 1
+
+        if q_nb == 7:  # packet with PNG header
+            out += qry[8:]
+
+        if 7 < q_nb < 127:  # All packets up to IEND chunk
+            out += qry
+
+open('flag.png', 'wb').write(out)
+```
+
+flag.png -- 
+
 <p align="center">
   <img src="">
 </p>
