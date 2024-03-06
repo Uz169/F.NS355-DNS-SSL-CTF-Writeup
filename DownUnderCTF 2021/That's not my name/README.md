@@ -7,7 +7,7 @@
 Юун түрүүнд бидэнд notmyname.pcap file өгөгдсөн ба нээж үзэхэд.
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/9.png">
 </p>
 
 гэсэн маш урт DNS,ARP,HTTP,TCP,UDP гэсэн protocol ууд агуулсан file байсан ба дийлэнхи нь нэг их онцын юм агуулаагүй байсан.
@@ -26,7 +26,7 @@ tshark -r notmyname.pcapng -T fields -e dns.qry.name -Y "dns.flags.response eq 0
 Үр дүнд нь 
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/10.png">
 </p>
 
 гэсэн маш урт текстүүд гарсан энэ дунд .qawesrdtfgyhuj.xyz гэсэн хэсэг байх ба үүнийг нь доорх кодоор устгасан. 
@@ -42,7 +42,7 @@ xxd -r -p new_res.txt > decoded_res.txt
 гэсэн коммандаар decode хийхэд 1 png file, lorem ipsum text мөн бодлогын flag гарсан
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/Uz169/F.NS355-DNS-SSL-CTF-Writeup/blob/main/Bsides%20CTF%202019%20--%20Dnscap/files/11.png">
 </p>
 
 flag - DUCTF{c4t_g07_y0ur_n4m3}
