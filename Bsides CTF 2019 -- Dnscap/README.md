@@ -50,6 +50,8 @@ Good luck! That was dnscat2 traffic on a flaky connection with lots of re-transm
 ```
 гэсэн 2 мөр байсан ба энэ нь DNSCAT2 traffic ашиглаж маш олон дахин илгээлт хийсэн гэсэн hint юм.
 
+DNSCAT2 tool ын хувьд халдагч ба эзлэгдсэн server хооронд command&control (C2) channel үүсгэдэг нэг төрлийн backdoor тэй төсөөтэй гэж хэлж болно. 
+
 мөн өөр сонирхолтой хэсэг байсан нь x00IEND , x00%tEXtdate гэх текстүүд байсан ба энэ IEND гэдэг нь PNG format тай фөйлын 
 magicbyte тул DNS ашиглан PNG file явуулсан гэж дүнгээд PNG file -н hex утгуудыг extract хийхэд flag гарч ирнэ.
 
